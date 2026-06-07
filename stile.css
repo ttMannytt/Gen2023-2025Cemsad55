@@ -1,0 +1,446 @@
+/* RESET Y FUENTES */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+    --verde-cecyte: #008F39;
+    --naranja-cecyte: #FF6B00;
+    --blanco: #FFFFFF;
+    --gris-fondo: #f4f7f5;
+    --texto-oscuro: #2c3e50;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+}
+
+/* BARRA SUPERIOR INSTITUCIONAL */
+.institutional-bar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 8px;
+    background: linear-gradient(90deg, var(--verde-cecyte) 0%, var(--naranja-cecyte) 100%);
+    z-index: 1000;
+}
+
+/* SECCIONES DE SCROLL */
+.scroll-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.bg-light { background-color: var(--gris-fondo); }
+.bg-dark { background-color: var(--verde-cecyte); color: white; }
+
+.content {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ANIMACIÓN FADE-IN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ESTILO HERO (PORTADA) */
+.hero { background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://www.transparenttextures.com/patterns/cubes.png'); }
+.top-label { color: var(--naranja-cecyte); letter-spacing: 4px; font-weight: 600; font-size: 14px; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 20px 0; color: var(--verde-cecyte); }
+.school-name { font-size: 1.8rem; color: var(--naranja-cecyte); margin-bottom: 30px; }
+.hero-text { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #555; font-weight: 300; }
+
+.scroll-indicator { margin-top: 50px; color: var(--verde-cecyte); animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* TÍTULOS DE SECCIÓN */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 4px;
+    background: var(--naranja-cecyte);
+}
+
+/* CUENTA REGRESIVA */
+.countdown-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.count-box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    min-width: 130px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--verde-cecyte);
+}
+.count-box span { font-size: 3rem; font-weight: 700; color: var(--naranja-cecyte); display: block; }
+
+/* TARJETA DE INFORMACIÓN */
+.info-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: left;
+}
+.card-text { padding: 50px; }
+.details-list { list-style: none; margin-top: 30px; }
+.details-list li { margin-bottom: 15px; font-size: 1.1rem; }
+.details-list i { color: var(--verde-cecyte); margin-right: 15px; width: 25px; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* TABLA ORDEN DEL DÍA */
+.table-container { background: white; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+table { width: 100%; border-collapse: collapse; color: var(--texto-oscuro); }
+th { background: var(--naranja-cecyte); color: white; padding: 20px; text-align: left; }
+td { padding: 15px 20px; border-bottom: 1px solid #eee; }
+
+/* FOOTER */
+.quote-icon { font-size: 3rem; color: var(--naranja-cecyte); opacity: 0.3; margin-bottom: 20px; }
+.quote { font-style: italic; margin-bottom: 30px; line-height: 1.4; }
+.footer-info { margin-top: 50px; border-top: 1px dotted #ccc; padding-top: 30px; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .info-card { grid-template-columns: 1fr; }
+    .card-image { display: none; }
+    h1 { font-size: 2.5rem; }
+    .count-box { min-width: 100px; padding: 15px; }
+}
+
+
+.img-invitacion {
+    display: block;         /* Permite aplicar márgenes automáticos */
+    margin: 0 auto 30px;    /* Centra horizontalmente (auto) y da 30px de espacio abajo hacia el contador */
+    max-width: 100%;        /* Evita que la imagen se salga en pantallas de celulares */
+    height: auto;           /* Mantiene la proporción original de la imagen sin deformarla */
+    border-radius: 8px;     /* Opcional: Le da una ligera curvatura elegante a las esquinas de tu imagen */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Opcional: Le da una sombra sutil para que resalte profesionalmente */
+}
+
+
+
+
+
+
+
+
+
+
+/* para mutear la musica  */
+
+  .mute-floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: rgba(0, 143, 57, 0.8); /* Verde institucional semi-transparente */
+      border: 2px solid #ffffff;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+  }
+  .mute-floating-btn:hover {
+      transform: scale(1.1);
+      background-color: #FF6B00; /* Cambia a naranja al pasar el mouse */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+/* ---- SECCIÓN GALERÍA DE GALA PREMIUM ---- */
+.bg-dark-gala {
+    background-color: #0b0c10; /* Negro profundo */
+    /* Destello radial sutil en color oro de fondo */
+    background-image: radial-gradient(circle at 50% 30%, rgba(223, 185, 99, 0.08) 0%, transparent 70%);
+}
+.text-gold {
+    color: #dfb963;
+    text-shadow: 0 0 15px rgba(223, 185, 99, 0.3);
+}
+
+.section-subtitle {
+    color: #a0a5b5;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Layout Horizontal Contenedor */
+.gala-gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* LA TARJETA PREMIUM */
+.gala-card {
+    position: relative;
+    width: 350px;
+    height: 550px;
+    background: linear-gradient(145deg, #1f2833 0%, #0b0c10 100%);
+    border: 1px solid rgba(223, 185, 99, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255, 107, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s;
+}
+
+.gala-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(223, 185, 99, 0.6);
+    /* Sombra con resplandor dorado */
+    box-shadow: 0 35px 70px rgba(0,0,0,0.9), 0 0 40px rgba(223, 185, 99, 0.15);
+}
+
+/* Efectos de Iluminación Internos */
+.gala-glow {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Adornos: Partículas simuladas */
+.gala-card::before {
+    content: '★'; position: absolute; top: 25px; right: 25px; color: rgba(223, 185, 99, 0.3); font-size: 1.2rem;
+}
+.gala-card::after {
+    content: '★'; position: absolute; bottom: 25px; left: 25px; color: rgba(0, 143, 57, 0.4); font-size: 1rem;
+}
+
+/* Encabezado */
+.gala-header { text-align: center; z-index: 2; }
+.gala-badge {
+    background: #0b0c10; 
+    color: #dfb963;      
+    border: 1px solid #dfb963; 
+    
+    /* MODIFICACIONES DE TAMAÑO */
+    font-size: 2.1rem;         /* <-- Aquí incrementamos el tamaño de la letra */
+    font-weight: 700;           /* Hace la letra un poco más gruesa (negrita) */
+    padding: 6px 22px;         /* Ajustamos el espacio interno para que el botón crezca proporcionalmente */
+    letter-spacing: 4px;       /* Aumenta la separación entre cada letra para un estilo más heráldico */
+    
+    display: inline-block;
+    margin-bottom: 12px;       /* Más espacio hacia el texto de abajo */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.gala-year {
+    font-family: 'Merriweather', serif;
+    color: #dfb963;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+}
+
+/* El Marco de la Foto (Estilo Consultoría Corporativa de Gala) */
+.gala-photo-frame {
+    position: relative;
+    width: 180px;
+    height: 230px;
+    z-index: 2;
+}
+
+.gala-frame-border {
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 14px;
+    padding: 2px;
+    /* Degradado metálico que simula oro real brillante */
+    background: linear-gradient(135deg, #dfb963 0%, #fff7d6 30%, #a37f37 70%, #dfb963 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(223, 185, 99, 0.2);
+}
+
+.gala-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #1f2833;
+}
+
+/* Información Inferior */
+.gala-info {
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+.gala-student-name {
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    min-height: 52px; /* Evita saltos bruscos si el nombre es largo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gala-divider {
+    width: 40px; 
+    height: 1.5px;
+    background: #dfb963; /* Línea de oro puro */
+    margin: 12px auto;
+}
+.gala-school {
+    color: #dfb963; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+}
+.gala-location {
+    color: #7f8c8d; font-size: 0.8rem; text-transform: uppercase; margin-top: 2px;
+}
+
+/* BOTONES DE NAVEGACIÓN GLOW */
+.gala-nav-btn {
+    background: #1f2833;
+    border: 1px solid rgba(223, 185, 99, 0.3);
+    color: #dfb963;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gala-nav-btn:hover {
+    background: #dfb963;
+    color: #0b0c10;
+    border-color: #dfb963;
+    box-shadow: 0 0 20px rgba(223, 185, 99, 0.6);
+    transform: scale(1.1);
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 600px) {
+    .gala-gallery-container {
+        position: relative;
+        padding-bottom: 80px;
+    }
+    .gala-nav-btn {
+        position: absolute;
+        bottom: 10px;
+    }
+    #btn-prev-alumno { left: 25%; }
+    #btn-next-alumno { right: 25%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- EFECTOS VISUALES AL CAMBIAR DE ALUMNO ---- */
+
+/* 1. Destello Blanco/Dorado de fondo */
+.gala-flash {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255, 247, 214, 0.6) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 5;
+    animation: flashAnimation 0.5s ease-out forwards;
+}
+
+@keyframes flashAnimation {
+    0% { opacity: 1; transform: scale(0.8); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
+/* 2. Partículas de Confeti Dorado */
+.gala-confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #dfb963, #fff7d6);
+    border-radius: 50%; /* Algunas circulares */
+    pointer-events: none;
+    z-index: 4;
+    animation: confettiExplosion 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+/* Hace que algunos confetis sean rectangulares para variar */
+.gala-confetti:nth-child(even) {
+    border-radius: 2px;
+    width: 6px;
+    height: 10px;
+}
+
+@keyframes confettiExplosion {
+    0% {
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    100% {
+        /* Las variables --x y --y las definiremos dinámicamente en JavaScript */
+        top: calc(50% + var(--y));
+        left: calc(50% + var(--x));
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.4) rotate(var(--r));
+    }
+}
