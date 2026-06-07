@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+<head>
+    <link rel="icon" type="image/x-icon" href="imagenes/ico/taza-de-cafe.png">
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"> <!-- Asegura que los acentos se vean bien -->
+  <title>Coffee Art! ☕</title>
+
+</head>
+
+<body>
+ <!-- ESTRUCTURA "CARGANDO"-->
+    <!-- Contenedor principal del cargador -->
+<div id="loader">
+  <div class="loader-content">
+    <!-- Tu logotipo (reemplaza 'logo.png' con la ruta de tu imagen) -->
+    <img src="imagenes/logo-gris.png" alt="Logo" class="loader-logo">
+    <!-- Texto que mostrará el progreso -->
+    <span id="percentage">0%</span>
+  </div>
+</div>
+
+
+
+
+
+ <!-- ESTRUCTURA DE LA VENTANA EMERGENTE -->
+  <div id="miModal" class="modal-overlay">
+    <div class="modal-box">
+      <span class="btn-cerrar" onclick="cerrarModal()">&times;</span>
+      <h2>¡Bienvenido a Coffee Art! ☕</h2>
+      <p>Suscríbete hoy y obtén un <strong>20% de descuento</strong> en tu primer consumo.</p>
+      <button class="btn-promo" onclick="cerrarModal()">¡Obtener Cupón!</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+ <!-- Sección del Banner -->
+  <section class="banner">
+    <h1>Aroma & Tradición</h1>
+    <p>Experiencia artesanal en cada sorbo</p>
+  </section>
+  <!-- ESTRUCTURA DEL MENÚ INTERACTIVO -->
+ <nav class="nav-interactivo">
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <!-- El sub-menú debe estar DENTRO de este li -->
+    <li class="tiene-submenu">
+      <a href="#">Menú ▼</a>
+      <ul class="sub-menu">
+        <li><a href="#">Cafés</a></li>
+        <li><a href="#">Alimentos</a></li>
+      </ul>
+    </li>
+    <li><a href="imagenes2.html">Imágenes</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+</nav>
+<script src="java.js"></script>
+</body>
+</html>

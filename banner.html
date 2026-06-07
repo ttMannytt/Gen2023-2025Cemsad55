@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<style>
+  /* --- CONTENEDOR DEL BANNER --- */
+  .banner {
+    /* Buscamos una imagen de café de alta calidad */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagenes/pexels-photo-33492608.jpeg');
+    
+                     
+    background-size: cover;       /* Ajusta la imagen para que cubra todo el espacio sin deformarse */
+    background-position: center;  /* Centra la foto para que no se corten las partes importantes */
+    height: 400px;                /* Define la altura fija del banner */
+    
+    /* Centrado de los elementos internos (el texto) */
+    display: flex;                /* Activamos Flexbox */
+    flex-direction: column;       /* Alineamos título y descripción uno abajo del otro */
+    justify-content: center;      /* Centra verticalmente el contenido */
+    align-items: center;          /* Centra horizontalmente el contenido */
+    
+    text-align: center;           /* Asegura que el texto esté centrado internamente */
+    color: white;                 /* Todo el texto del banner será blanco */
+    font-family: 'Arial', Arial, Helvetica, sans-serif;
+  }
+
+  /* --- ESTILO DEL TÍTULO --- */
+  .banner h1 {
+    font-size: 3.5rem;            /* Tamaño de letra grande y llamativo */
+    margin: 0;                    /* Quita el margen por defecto */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra al texto para que resalte del fondo */
+    letter-spacing: 2px;          /* Espaciado entre letras para un toque moderno */
+  }
+
+  /* --- ESTILO DEL SUBTÍTULO --- */
+  .banner p {
+    font-size: 1.2rem;            /* Tamaño de letra mediano */
+    margin-top: 10px;             /* Separa el párrafo del título */
+    background-color: #6F4E37;    /* Fondo color café para el texto */
+    padding: 5px 20px;            /* Espacio interno para que el fondo no pegue al texto */
+    border-radius: 50px;          /* Bordes totalmente redondeados (tipo cápsula) */
+  }
+</style>
+</head>
+<body>
+
+  <!-- Estructura del Banner -->
+  <section class="banner">
+    <h1>Aroma & Tradición</h1>
+    <p>El mejor café orgánico directo a tu taza</p>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* --- CONTENEDOR DEL BANNER --- */
+  .banner {
+    /* Combinamos un degradado oscuro con una URL directa de imagen para que el texto sea legible */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('https://unsplash.com');
+    
+    background-size: cover;       /* La imagen se estira para cubrir todo el contenedor sin deformarse */
+    background-position: center;  /* Mantiene el centro de la foto a la vista */
+    height: 500px;                /* Altura del banner (un poco más alto para el botón) */
+    
+    /* Centrado Maestro con Flexbox */
+    display: flex;                /* Convierte el contenedor en una caja flexible */
+    flex-direction: column;       /* Apila los elementos (h1, p, a) en forma de columna */
+    justify-content: center;      /* Centra todo el bloque verticalmente */
+    align-items: center;          /* Centra todos los elementos horizontalmente */
+    
+    text-align: center;           /* Alinea el texto al centro */
+    color: white;                 /* Color de fuente global para el banner */
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* --- ESTILO DEL TÍTULO --- */
+  .banner h1 {
+    font-size: 4rem;              /* Tamaño de letra muy grande para llamar la atención */
+    margin: 0;                    /* Quita márgenes por defecto */
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.7); /* Sombra intensa para resaltar del fondo */
+    text-transform: uppercase;    /* Pone el título en mayúsculas automáticamente */
+  }
+
+  /* --- ESTILO DEL SUBTÍTULO --- */
+  .banner p {
+    font-size: 1.4rem;            /* Tamaño de letra mediano-grande */
+    margin: 15px 0 30px 0;        /* Espacios: 15px arriba, 0 lados, 30px abajo (para el botón) */
+    font-weight: 300;             /* Hace la letra un poco más delgada y elegante */
+  }
+
+  /* --- ESTILO DEL BOTÓN --- */
+  .boton-menu {
+    background-color: #ffeb3b;    /* Color amarillo de alto contraste */
+    color: #333;                  /* Texto oscuro para legibilidad */
+    padding: 15px 40px;           /* Espacio interno del botón (grosor) */
+    text-decoration: none;        /* Quita la línea inferior de los enlaces */
+    font-size: 1.1rem;            /* Tamaño del texto del botón */
+    font-weight: bold;            /* Texto en negrita */
+    border-radius: 50px;          /* Hace el botón totalmente ovalado */
+    transition: all 0.3s ease;    /* Suaviza los cambios de color y tamaño */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar efecto de relieve */
+  }
+
+  /* --- EFECTO HOVER DEL BOTÓN --- */
+  .boton-menu:hover {
+    background-color: #fbc02d;    /* Oscurece el amarillo al pasar el mouse */
+    transform: scale(1.1);        /* Agranda el botón un 10% al señalarlo */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* La sombra crece, simulando elevación */
+  }
+</style>
+</head>
+<body>
+
+  <!-- Sección del Banner -->
+  <section class="banner">
+    <h1>Aroma & Tradición</h1>
+    <p>Experiencia artesanal en cada sorbo</p>
+    
+    <!-- Enlace con forma de botón -->
+    <a href="#" class="boton-menu">Ver Menú Completo</a>
+  </section>
+
+</body>
+</html>
